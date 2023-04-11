@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            // 1.创建root
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+            // 封装App组件
+            class App extends React.Component {
+                constructor() {
+                    super()
+                    this.state = {
+                        title: "哈哈哈",
+                        imgURL: "https://pic1.zhimg.com/v2-0d2cb4128888b63825bf19cada23c3a8_b.jpg",
+                        href: "http://www.baidu.com"
+                    }
+                }
+
+                render() {
+                    const { title, imgURL, href } = this.state
+
+                    return (
+                        <div>
+                            {/*全局title属性*/}
+                            <h2 title={title}>我是h2元素</h2>
+                            {/*基本绑定*/}
+                            <img src={imgURL} alt="" />
+                            {/*链接绑定*/}
+                            <a href={href}>百度一下</a>
+                        </div>
+                    )
+
+                }
+            }
+            // 2.渲染组件
+            root.render(<App />)
+        </script>
+    </body>
+
+</html>

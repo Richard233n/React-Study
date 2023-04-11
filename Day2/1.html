@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Richard Engineering Lab</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            // this的4种绑定规则
+            // 1.默认绑定,独立执行foo()
+            // 2.隐士绑定 被一个对象执行  obj.foo()
+            // 3.显示绑定:call/apply/bind foo.call
+            // 4.new绑定 new foo()
+
+            // 1.创建root
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+            // 封装App组件
+            class App extends React.Component {
+                constructor() {
+                    super()
+                    this.state = {
+                        message: "Hello world",
+
+                    }
+                }
+                btn3Click(event,name,age) {
+                    this.setState({
+                        message: "At your service sir",
+                    })
+                }
+
+                render() {
+                    const { message } = this.state
+
+                    return (
+                        <div>
+                            {/*3.this绑定方式:直接传入一个箭头函数*/}
+                            <button onClick={() => console.log("btn3Click")}>按钮3</button>
+                            <button onClick={() => this.btn3Click()}>Hey Javice</button>
+
+                            event 参数传递
+                            <button onClick={() => this.btn3Click()}>Hey Javice</button>
+
+
+                            <h2>{message}</h2>
+                        </div>
+                    )
+
+                }
+            }
+            // 2.渲染组件
+            root.render(<App />)
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello React</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <div id="app"></div>
+
+
+        <!-- 编写React代码(使用jsx语法) -->
+
+        <!-- 引入三个包-->
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+        <!-- 引入babel(加载React组件) -->
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            //HeLLo world
+            // React18之前: ReactDOM.render
+            // ReactDOM.render(<h2>HeLLo World</h2>, document.queryseLector("#root"))
+            // 方法不再建议使用u switch to the new API, your app will behave as if it',建议使用
+            //~React.18之后：
+            // const root = ReactDOM.createRoot(document.querySelector("#root"))
+            // root.render(<h2>Hello world</h2>)
+            const app = ReactDOM.createRoot(document.querySelector("#app"))
+            app.render(<h2>Hello Richard</h2>)
+        </script>
+    </body>
+
+</html>

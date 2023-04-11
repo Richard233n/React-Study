@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            // 1.创建root
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+            // 封装App组件
+            class App extends React.Component {
+                constructor() {
+                    super()
+                    this.state = {
+                        message: "Hello World",
+                        isReady: true
+                    }
+                }
+
+                render() {
+                    const { isReady } = this.state
+
+                    let showElement = null
+                    
+                    if (isReady) {
+                        showElement = <h2>开始</h2>
+                    } else {
+                        showElement = <h2>做好准备</h2> 
+                    }
+
+
+                    return (
+                    
+                        <div>
+                        {/*方式1:根据条件给变量赋值不同的内容*/}
+                        {showElement}
+                        {/*方式2:三元运算符*/}
+                       <div>{isReady?<button>开始战斗I</button>:<h3>赶紧准备</h3>}</div>
+                        
+                        </div>
+                        // 方式2
+                       
+                    )
+
+                }
+            }
+            // 2.渲染组件
+            root.render(<App />)
+        </script>
+    </body>
+
+</html>
