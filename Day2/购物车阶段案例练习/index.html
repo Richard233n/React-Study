@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .oneline {
+                font-size: 22px;
+                display: flex;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            // 1.创建root
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+            // 封装App组件
+            class App extends React.Component {
+                constructor() {
+                    super()
+                    this.state = {
+                        books: [
+                            {
+                                id: 1,
+                                name: '冠算法导论',
+                                date: '2006-9',
+                                price: 85.00,
+                                count: 1
+                            },
+                            {
+                                id: 2,
+                                name: 'UNIX编程艺术',
+                                date: '2006-2',
+                                price: 59.00,
+                                count: 1
+                            },
+                            {
+                                id: 3,
+                                name: '编程珠机',
+                                date: '2008-10',
+                                price: 39.00,
+                                count: 1
+                            },
+                            {
+                                id: 4,
+                                name: '代码大全',
+                                date: '2006-3',
+                                price: 128.80,
+                                count: 1
+                            }
+
+                        ]
+
+                    }
+                }
+
+                render() {
+                    const liEls = this.state.books.map(book => {
+
+                        return (
+                            <div className="book">
+                                {book.id}
+                                {book.name}
+                                {book.date}
+                                {book.pirce}
+                                {book.count}
+                            </div>
+                        )
+                    })
+                    return (
+                        <div>
+                            <h2>书籍列表</h2>
+                            <ul>
+                                {liEls}
+                            </ul>
+                        </div>
+                    )
+                }
+            }
+            // 2.渲染组件
+            root.render(<App />)
+        </script>
+    </body>
+
+</html>
