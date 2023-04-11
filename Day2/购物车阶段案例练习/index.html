@@ -5,11 +5,16 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>购物车案例练习_老师教程版</title>
         <style>
-            .oneline {
-                font-size: 22px;
-                display: flex;
+            table {
+                border-collapse: collapse;
+            }
+
+            td,
+            th {
+                padding: 10px 16px;
+                border: 1px solid #aaa;
             }
         </style>
     </head>
@@ -19,7 +24,12 @@
 
         <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+        <script src="/Day2/购物车阶段案例练习/data.js"></script>
 
         <script type="text/babel">
 
@@ -31,62 +41,64 @@
                 constructor() {
                     super()
                     this.state = {
-                        books: [
-                            {
-                                id: 1,
-                                name: '冠算法导论',
-                                date: '2006-9',
-                                price: 85.00,
-                                count: 1
-                            },
-                            {
-                                id: 2,
-                                name: 'UNIX编程艺术',
-                                date: '2006-2',
-                                price: 59.00,
-                                count: 1
-                            },
-                            {
-                                id: 3,
-                                name: '编程珠机',
-                                date: '2008-10',
-                                price: 39.00,
-                                count: 1
-                            },
-                            {
-                                id: 4,
-                                name: '代码大全',
-                                date: '2006-3',
-                                price: 128.80,
-                                count: 1
-                            }
-
-                        ]
-
+                        books: books
                     }
                 }
 
                 render() {
-                    const liEls = this.state.books.map(book => {
+                    const { books } = this.state
 
-                        return (
-                            <div className="book">
-                                {book.id}
-                                {book.name}
-                                {book.date}
-                                {book.pirce}
-                                {book.count}
-                            </div>
-                        )
-                    })
+
+                    //   计算总价格的方式1
+                    // let totalPrice = 0
+                    // for (let i = 0; i < books.length; i++) {
+                    //     const book = books[i]
+                    //     totalPrice += book.price * book.count
+                    // }
+
+                    const totalPrice = books.reduce((preValue, item) => {
+                        return preValue + item.count * item.price
+                    }, 0)
+
+
                     return (
                         <div>
-                            <h2>书籍列表</h2>
-                            <ul>
-                                {liEls}
-                            </ul>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>书籍名称</th>
+                                        <th>出版日期</th>
+                                        <th>价格</th>
+                                        <th>购买数量</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        books.map((item, index) => {
+                                            return (
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>{item.name}</td>
+                                                    <td>{item.date}</td>
+                                                    <td>{item.price}</td>
+                                                    <td>
+                                                        <button>+</button>
+                                                        {item.count}
+                                                        <button>-</button>
+                                                    </td>
+                                                    <td><button>删除</button></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+                            <h2>总价格{totalPrice}</h2>
                         </div>
                     )
+
                 }
             }
             // 2.渲染组件

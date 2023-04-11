@@ -1,4 +1,4 @@
-const book = [
+const books = [
     {
         id: 1,
         name: '冠算法导论',
@@ -24,7 +24,7 @@ const book = [
         id: 4,
         name: '代码大全',
         date: '2006-3',
-        price: 128.80,
+        price: 128,
         count: 1
     }
 
