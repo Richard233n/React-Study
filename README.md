@@ -2,12 +2,12 @@
 # React 学习库
 
 * 创建一个vue项目
-```shell
+```
 npm init vue@latest
 ```
 
 * 初始化vue项目
-```shell
+```
 npm install
 ```
 * 虚拟DOM的创建过程

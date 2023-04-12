@@ -6,9 +6,18 @@
 # 开发React必须依赖三个库：
 
 # 三个依赖包
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+```
+https://unpkg.com/react@18/umd/react.development.js
+```
+
+```
+https://unpkg.com/react-dom@18/umd/react-dom.development.js
+```
+
+```
+https://unpkg.com/babel-standalone@6/babel.min.js
+```
 
 # 依赖的三种引入方式：
 1. 直接CDN引入
