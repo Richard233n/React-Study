@@ -37,6 +37,6 @@ https://unpkg.com/babel-standalone@6/babel.min.js
 1. react包中包含了react web和react-native所共同拥有的核心代a码。
 2. react-dom针对web和native所完成的事情不同：
 3. web端：react-dom会将jsx最终渲染成真实的DOM,显示在浏览器中
-4. √nativei端：react-dom会将jsx最终渲染成原生的控件（比如Android中的Button,iOS中的UlButton)。
+4. nativei端：react-dom会将jsx最终渲染成原生的控件（比如Android中的Button,iOS中的UlButton)。
 
 
