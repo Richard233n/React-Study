@@ -82,7 +82,7 @@
                                                     <td>{index + 1}</td>
                                                     <td>{item.name}</td>
                                                     <td>{item.date}</td>
-                                                    <td>{item.price}</td>
+                                                    <td>{"¥"+item.price}</td>
                                                     <td>
                                                         <button>+</button>
                                                         {item.count}
@@ -95,7 +95,7 @@
                                     }
                                 </tbody>
                             </table>
-                            <h2>总价格{totalPrice}</h2>
+                            <h2>总价格{"¥"+totalPrice}</h2>
                         </div>
                     )
 
