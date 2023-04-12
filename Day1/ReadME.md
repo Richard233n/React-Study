@@ -5,7 +5,7 @@
 
 # 开发React必须依赖三个库：
 
-# 三个依赖包
+# 三个依赖包(本地引入失败,建议直接链接引入)
 
 ```
 https://unpkg.com/react@18/umd/react.development.js

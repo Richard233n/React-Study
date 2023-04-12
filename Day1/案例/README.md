@@ -30,6 +30,19 @@ root.Render函数
 2. 当我们的数据发生变化时，我们可以调用this.setState来更新数据，并且通知Reacti进行update:操作；
 3. 在进行update操作时，就会重新调用renderi函数，并且使用最新的数据，来渲染界面
 
+# 组件化问题二：事件绑定中的this
+* 在类中直接定义一个函数，并且将这个函数绑定到元素的onClick事件上，当前这个函数的this指向的是谁呢？
+
+* 默认情况下是undefined
+1. 因为在正常的DOM操作中，监听点击，监听函数中的this其实是节点对象（比如说是outto对象）；
+2. 这次因为React并不是直接渲染成真实的DOM,我们所编写的button只是一个语法糖，它的本质React的Elementy对象；
+3. 那么在这里发生监听的时候，reacti在执行函数时并没有绑定this,默认情况下就是一个undefined;
+
+* 在绑定的函数中，可能想要使用当前对象，比如执行this.setState函数，就必须拿到当前对象的this
+1. 我们就需要在传入函数时，给这个函数直接绑定this
+2. 类似于以下的写法：<button onClick:={this.changeText..bind(this)}>改变文本</button>
+
+
 # 数据存放位置
 ![React案例01](http://m.qpic.cn/psc?/V5161jQp0UJiQ743pKKQ25ViNk0hh083/ruAMsa53pVQWN7FLK88i5v7mIW*hDoYwbvHkCIQT3qwjCs2tMqDTfQYVruqtr*KsSU.KmORe2vwKQpYncExk7eeg8RNxb.2VU**oXLxoeBQ!/b&bo=DQTSAQAAAAADB*g!&rf=viewer_4"title")
 
