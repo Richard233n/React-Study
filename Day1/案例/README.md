@@ -31,5 +31,5 @@ root.Render函数
 3. 在进行update操作时，就会重新调用renderi函数，并且使用最新的数据，来渲染界面
 
 # 数据存放位置
-![React案例01](http://a1.qpic.cn/psc?/V5161jQp0UJiQ743pKKQ25ViNk0hh083/ruAMsa53pVQWN7FLK88i5v7mIW*hDoYwbvHkCIQT3qwjCs2tMqDTfQYVruqtr*KsSU.KmORe2vwKQpYncExk7eeg8RNxb.2VU**oXLxoeBQ!/c&ek=1&kp=1&pt=0&bo=DQTSAQAAAAADJ9g!&tl=1&vuin=1943126663&tm=1681308000&dis_t=1681311329&dis_k=b16118d023417c48610982434d8fde35&sce=60-2-2&rf=viewer_4"title")
+![React案例01](http://m.qpic.cn/psc?/V5161jQp0UJiQ743pKKQ25ViNk0hh083/ruAMsa53pVQWN7FLK88i5v7mIW*hDoYwbvHkCIQT3qwjCs2tMqDTfQYVruqtr*KsSU.KmORe2vwKQpYncExk7eeg8RNxb.2VU**oXLxoeBQ!/b&bo=DQTSAQAAAAADB*g!&rf=viewer_4)
 
