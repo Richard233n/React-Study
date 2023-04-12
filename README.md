@@ -23,3 +23,6 @@ npm install
 1. 只需要告诉Reacti希望让Ul是什么状态；
 2. React来确保DOM和这些状态是匹配的；
 3. 不需要直接进行DOM操作，就可以从手动更改DOM、属性操作、事件处理中解放出来；
+
+# 这是一个测试
+[![沙漠中的岩石图片](/assets/img/shiprock.jpg "Shiprock")](https://markdown.com.cn)
